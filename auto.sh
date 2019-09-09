@@ -32,3 +32,7 @@ sudo wget \
         --output-document=/etc/bash_completion.d/docker-compose \
         "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose" \
     && printf '\nDocker Compose installed successfully\n\n'
+    
+# Ctop
+sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64 -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
