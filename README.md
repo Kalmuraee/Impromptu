@@ -11,4 +11,5 @@ Auto Impromptu: No prepration required, since every manual work is a bug, this a
 
 # Run
 You can run the script using the following command
+
 `bash <(curl -s https://raw.githubusercontent.com/Kalmuraee/Impromptu/master/auto.sh)`
