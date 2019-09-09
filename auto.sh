@@ -2,6 +2,10 @@
 
 set -eu
 
+
+
+printf ' * Installing Docker ....\n\n'
+
 # Docker
 sudo apt remove --yes docker docker-engine docker.io \
     && sudo apt update \
@@ -20,8 +24,12 @@ sudo apt remove --yes docker docker-engine docker.io \
     && sudo systemctl enable docker \
     && printf '\nDocker installed successfully\n\n'
 
+
 printf 'Waiting for Docker to start...\n\n'
 sleep 3
+
+
+printf '\n\n * Installing Docker-Compose \n\n'
 
 # Docker Compose
 sudo wget \
@@ -32,7 +40,9 @@ sudo wget \
         --output-document=/etc/bash_completion.d/docker-compose \
         "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose" \
     && printf '\nDocker Compose installed successfully\n\n'
-    
+
+printf '\n\n * Installing ctop'
+sleep 2
 # Ctop
 sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64 -O /usr/local/bin/ctop
 sudo chmod +x /usr/local/bin/ctop
