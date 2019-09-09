@@ -4,7 +4,7 @@ set -eu
 
 
 
-printf ' * Installing Docker ....\n\n'
+printf '\n\n * Installing Docker ....\n\n'
 
 # Docker
 sudo apt remove --yes docker docker-engine docker.io \
@@ -41,8 +41,9 @@ sudo wget \
         "https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose" \
     && printf '\nDocker Compose installed successfully\n\n'
 
-printf '\n\n * Installing ctop'
+printf '\n\n * Installing ctop ...\n\n'
 sleep 2
 # Ctop
 sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.2/ctop-0.7.2-linux-amd64 -O /usr/local/bin/ctop
 sudo chmod +x /usr/local/bin/ctop
+sudo reboot
