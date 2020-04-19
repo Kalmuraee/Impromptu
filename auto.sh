@@ -18,8 +18,11 @@ sudo apt remove --yes docker docker-engine docker.io \
         "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/ubuntu \
         $(lsb_release --codename --short) \
         stable" \
+        
     && sudo apt update \
+    && wait
     && sudo apt --yes --no-install-recommends install docker-ce \
+    && wait
     && sudo usermod --append --groups docker "$USER" \
     && sudo systemctl enable docker \
     && printf '\nDocker installed successfully\n\n'
